@@ -37,7 +37,7 @@ class AboutNone(Koan):
         #
         #     https://github.com/gregmalcolm/python_koans/wiki/Class-Attribute
 
-        self.assertEqual(AttributeError, ex2.__class__)
+        self.assertEqual("'NoneType' object has no attribute 'some_method_none'", ex2.__class__)
 
         # What message was attached to the exception?
         # (HINT: replace __ with part of the error message.)
