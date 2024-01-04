@@ -22,14 +22,14 @@ class AboutDictionaries(Koan):
 
     def test_accessing_dictionaries(self):
         babel_fish = { 'one': 'uno', 'two': 'dos' }
-        self.assertEqual(__, babel_fish['one'])
-        self.assertEqual(__, babel_fish['two'])
+        self.assertEqual('uno', babel_fish['one'])
+        self.assertEqual('dos', babel_fish['two'])
 
     def test_changing_dictionaries(self):
         babel_fish = { 'one': 'uno', 'two': 'dos' }
         babel_fish['one'] = 'eins'
 
-        expected = { 'two': 'dos', 'one': __ }
+        expected = { 'two': 'dos', 'one': 'eins' }
         self.assertDictEqual(expected, babel_fish)
 
     def test_dictionary_is_unordered(self):
