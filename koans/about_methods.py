@@ -51,7 +51,7 @@ class AboutMethods(Koan):
         return [a, b]
 
     def test_calling_with_default_values(self):
-        self.assertEqual([1, 'default value'], self.method_with_defaults(1))
+        self.assertEqual([1, 'default_value'], self.method_with_defaults(1))
         self.assertEqual([1, 2], self.method_with_defaults(1, 2))
 
     # ------------------------------------------------------------------
