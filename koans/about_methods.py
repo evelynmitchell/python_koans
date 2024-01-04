@@ -41,7 +41,7 @@ class AboutMethods(Koan):
         sum = a + b
 
     def test_which_does_not_return_anything(self):
-        self.assertEqual(__, self.pointless_method(1, 2))
+        self.assertEqual(3, self.pointless_method(1, 2))
         # Notice that methods accessed from class scope do not require
         # you to pass the first "self" argument?
 
@@ -51,8 +51,8 @@ class AboutMethods(Koan):
         return [a, b]
 
     def test_calling_with_default_values(self):
-        self.assertEqual(__, self.method_with_defaults(1))
-        self.assertEqual(__, self.method_with_defaults(1, 2))
+        self.assertEqual([1, 'default value'], self.method_with_defaults(1))
+        self.assertEqual([1, 2], self.method_with_defaults(1, 2))
 
     # ------------------------------------------------------------------
 
