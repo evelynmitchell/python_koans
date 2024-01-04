@@ -27,15 +27,15 @@ class AboutStringManipulation(Koan):
 
     def test_you_can_get_a_substring_from_a_string(self):
         string = "Bacon, lettuce and tomato"
-        self.assertEqual(__, string[7:10])
+        self.assertEqual('let', string[7:10])
 
     def test_you_can_get_a_single_character_from_a_string(self):
         string = "Bacon, lettuce and tomato"
-        self.assertEqual(__, string[1])
+        self.assertEqual("a", string[1])
 
     def test_single_characters_can_be_represented_by_integers(self):
-        self.assertEqual(__, ord('a'))
-        self.assertEqual(__, ord('b') == (ord('a') + 1))
+        self.assertEqual(97, ord('a'))
+        self.assertEqual(98, ord('b') == (ord('a') + 1))
 
     def test_strings_can_be_split(self):
         string = "Sausage Egg Cheese"
