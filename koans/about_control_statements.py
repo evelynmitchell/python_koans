@@ -71,7 +71,7 @@ class AboutControlStatements(Koan):
         for knight, answer in round_table:
             result.append("Contestant: '" + knight + "'   Answer: '" + answer + "'")
 
-        text = __
+        text = "Contestant: 'Robin'   Answer: 'Blue! I mean Green!'"
 
         self.assertRegex(result[2], text)
 
