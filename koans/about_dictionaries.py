@@ -36,17 +36,17 @@ class AboutDictionaries(Koan):
         dict1 = { 'one': 'uno', 'two': 'dos' }
         dict2 = { 'two': 'dos', 'one': 'uno' }
 
-        self.assertEqual(__, dict1 == dict2)
+        self.assertEqual(True, dict1 == dict2)
 
 
     def test_dictionary_keys_and_values(self):
         babel_fish = {'one': 'uno', 'two': 'dos'}
-        self.assertEqual(__, len(babel_fish.keys()))
-        self.assertEqual(__, len(babel_fish.values()))
-        self.assertEqual(__, 'one' in babel_fish.keys())
-        self.assertEqual(__, 'two' in babel_fish.values())
-        self.assertEqual(__, 'uno' in babel_fish.keys())
-        self.assertEqual(__, 'dos' in babel_fish.values())
+        self.assertEqual(2, len(babel_fish.keys()))
+        self.assertEqual(2, len(babel_fish.values()))
+        self.assertEqual(True, 'one' in babel_fish.keys())
+        self.assertEqual(False, 'two' in babel_fish.values())
+        self.assertEqual(False, 'uno' in babel_fish.keys())
+        self.assertEqual(True, 'dos' in babel_fish.values())
 
     def test_making_a_dictionary_from_a_sequence_of_keys(self):
         cards = {}.fromkeys(('red warrior', 'green elf', 'blue valkyrie', 'yellow dwarf', 'confused looking zebra'), 42)
