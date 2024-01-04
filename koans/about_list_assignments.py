@@ -25,9 +25,9 @@ class AboutListAssignments(Koan):
 
     def test_parallel_assignments_with_fewer_values(self):
         title, *first_names, last_name = ["Mr", "Bond"]
-        self.assertEqual(__, title)
-        self.assertEqual(__, first_names)
-        self.assertEqual(__, last_name)
+        self.assertEqual("Mr", title)
+        self.assertEqual([], first_names)
+        self.assertEqual("Bond", last_name)
 
     def test_parallel_assignments_with_sublists(self):
         first_name, last_name = [["Willie", "Rae"], "Johnson"]
