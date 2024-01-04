@@ -57,8 +57,8 @@ class AboutStringManipulation(Koan):
     def test_raw_strings_do_not_interpret_escape_characters(self):
         string = r'\n'
         self.assertNotEqual('\n', string)
-        self.assertEqual('', string)
-        self.assertEqual(0, len(string))
+        self.assertEqual('\\n', string)
+        self.assertEqual(1, len(string))
 
         # Useful in regular expressions, file paths, URLs, etc.
 
