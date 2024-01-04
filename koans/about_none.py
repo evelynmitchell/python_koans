@@ -41,7 +41,7 @@ class AboutNone(Koan):
 
         # What message was attached to the exception?
         # (HINT: replace __ with part of the error message.)
-        self.assertRegex(ex2.args[0], 'AttributeError') 
+        self.assertRegex(ex2.args[0], 'attribute')
 
     def test_none_is_distinct(self):
         """
