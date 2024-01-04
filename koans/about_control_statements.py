@@ -51,7 +51,7 @@ class AboutControlStatements(Koan):
             i += 1
             if (i % 2) == 0: continue
             result.append(i)
-        self.assertEqual(__, result)
+        self.assertEqual([2,4,6,8], result)
 
     def test_for_statement(self):
         phrase = ["fish", "and", "chips"]
