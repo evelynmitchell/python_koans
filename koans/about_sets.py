@@ -37,10 +37,10 @@ class AboutSets(Koan):
         scotsmen = {'MacLeod', 'Wallace', 'Willie'}
         warriors = {'MacLeod', 'Wallace', 'Leonidas'}
 
-        self.assertEqual(__, scotsmen - warriors)
-        self.assertEqual(__, scotsmen | warriors)
-        self.assertEqual(__, scotsmen & warriors)
-        self.assertEqual(__, scotsmen ^ warriors)
+        self.assertEqual({'Willie'}, scotsmen - warriors)
+        self.assertEqual({'MacLeod','Wallace'}, scotsmen | warriors)
+        self.assertEqual({'MacLeod','Wallace', 'Willie', 'Leonidas'}, scotsmen & warriors)
+        self.assertEqual({'Willie','Leonidas'}, scotsmen ^ warriors)
 
     # ------------------------------------------------------------------
 
