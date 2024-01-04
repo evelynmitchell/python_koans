@@ -19,10 +19,10 @@ class AboutSets(Koan):
         # Note: Literal sets using braces were introduced in python 3.
         #       They were also backported to python 2.7.
 
-        self.assertEqual(__, {1, 2, 3}.__class__)
-        self.assertEqual(__, {'one': 1, 'two': 2}.__class__)
+        self.assertEqual(set, {1, 2, 3}.__class__)
+        self.assertEqual(dict), {'one': 1, 'two': 2}.__class__)
 
-        self.assertEqual(__, {}.__class__)
+        self.assertEqual(dict, {}.__class__)
 
     def test_creating_sets_using_strings(self):
         self.assertEqual(__, {'12345'})
