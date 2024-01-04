@@ -20,7 +20,7 @@ class AboutSets(Koan):
         #       They were also backported to python 2.7.
 
         self.assertEqual(set, {1, 2, 3}.__class__)
-        self.assertEqual(dict), {'one': 1, 'two': 2}.__class__)
+        self.assertEqual(dict, {'one': 1, 'two': 2}.__class__)
 
         self.assertEqual(dict, {}.__class__)
 
