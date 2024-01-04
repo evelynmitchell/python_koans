@@ -40,7 +40,7 @@ class AboutStringManipulation(Koan):
     def test_strings_can_be_split(self):
         string = "Sausage Egg Cheese"
         words = string.split()
-        self.assertListEqual([__, __, __], words)
+        self.assertListEqual(['Sausage','Egg', 'Cheese'], words)
 
     def test_strings_can_be_split_with_different_patterns(self):
         import re #import python regular expression library
@@ -50,7 +50,7 @@ class AboutStringManipulation(Koan):
 
         words = pattern.split(string)
 
-        self.assertListEqual([__, __, __, __], words)
+        self.assertListEqual(['the', 'rain', 'in', 'spain'], words)
 
         # Pattern is a Python regular expression pattern which matches ',' or ';'
 
