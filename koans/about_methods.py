@@ -117,7 +117,7 @@ class AboutMethods(Koan):
     def one_line_method(self): return 'Madagascar'
 
     def test_no_indentation_required_for_one_line_statement_bodies(self):
-        self.assertEqual(__, self.one_line_method())
+        self.assertEqual('Madagascar', self.one_line_method())
 
     # ------------------------------------------------------------------
 
@@ -126,7 +126,7 @@ class AboutMethods(Koan):
         return "ok"
 
     def test_the_documentation_can_be_viewed_with_the_doc_method(self):
-        self.assertRegex(self.method_with_documentation.__doc__, __)
+        self.assertRegex(self.method_with_documentation.__doc__, 'ok')
 
     # ------------------------------------------------------------------
 
