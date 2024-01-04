@@ -33,7 +33,7 @@ class AboutMethods(Koan):
             msg = e.args[0]
 
         # Note, watch out for parenthesis. They need slashes in front!
-        self.assertRegex(msg, 'AttributeError')
+        self.assertRegex(msg, 'my_global_function\(\) takes 2 positional arguments but 3 were given')
 
     # ------------------------------------------------------------------
 
