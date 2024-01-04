@@ -9,11 +9,11 @@ class AboutSets(Koan):
 
         there_can_only_be_only_one = set(highlanders)
 
-        self.assertEqual(['MacLeod', 'Ramirez', 'Matunas','Malcolm'], there_can_only_be_only_one)
+        self.assertEqual({'MacLeod', 'Ramirez', 'Matunas','Malcolm'}, there_can_only_be_only_one)
 
     def test_empty_sets_have_different_syntax_to_populated_sets(self):
-        self.assertEqual(__, {1, 2, 3})
-        self.assertEqual(__, set())
+        self.assertEqual({1,2,3}, {1, 2, 3})
+        self.assertEqual(False,set())
 
     def test_dictionaries_and_sets_use_same_curly_braces(self):
         # Note: Literal sets using braces were introduced in python 3.
