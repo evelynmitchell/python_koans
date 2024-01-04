@@ -31,7 +31,7 @@ class AboutLists(Koan):
 
         self.assertEqual('peanut', noms[0])
         self.assertEqual('jelly', noms[3])
-        self.assertEqual('and', noms[-1])
+        self.assertEqual('jelly', noms[-1])
         self.assertEqual('butter', noms[-3])
 
     def test_slicing_lists(self):
