@@ -103,14 +103,14 @@ class AboutMethods(Koan):
         pass
 
     def test_methods_that_do_nothing_need_to_use_pass_as_a_filler(self):
-        self.assertEqual(True, self.empty_method())
+        self.assertEqual(None, self.empty_method())
 
     def test_pass_does_nothing_at_all(self):
         "You"
         "shall"
         "not"
         pass
-        self.assertEqual(____, "Still got to this line" != None)
+        self.assertEqual(True, "Still got to this line" != None)
 
     # ------------------------------------------------------------------
 
