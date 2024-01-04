@@ -58,7 +58,7 @@ class AboutStringManipulation(Koan):
         string = r'\n'
         self.assertNotEqual('\n', string)
         self.assertEqual('\\n', string)
-        self.assertEqual(1, len(string))
+        self.assertEqual(2, len(string))
 
         # Useful in regular expressions, file paths, URLs, etc.
 
