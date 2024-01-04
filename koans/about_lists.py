@@ -39,7 +39,7 @@ class AboutLists(Koan):
 
         self.assertEqual(['peanut'], noms[0:1])
         self.assertEqual(['peanut', 'butter'], noms[0:2])
-        self.assertEqual('and', noms[2:2])
+        self.assertEqual(['and'], noms[2:2])
         self.assertEqual(['and', 'jelly'], noms[2:20])
         self.assertEqual(['jelly', 'and', 'butter', 'peanut'], noms[4:0])
         self.assertEqual([], noms[4:100])
