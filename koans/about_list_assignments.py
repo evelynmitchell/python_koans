@@ -38,6 +38,6 @@ class AboutListAssignments(Koan):
         first_name = "Roy"
         last_name = "Rob"
         first_name, last_name = last_name, first_name
-        self.assertEqual("Roy", first_name)
-        self.assertEqual("Rob", last_name)
+        self.assertEqual("Rob", first_name)
+        self.assertEqual("Roy", last_name)
 
