@@ -13,7 +13,7 @@ class AboutSets(Koan):
 
     def test_empty_sets_have_different_syntax_to_populated_sets(self):
         self.assertEqual({1,2,3}, {1, 2, 3})
-        self.assertEqual(False,set())
+        self.assertEqual(set(),set())
 
     def test_dictionaries_and_sets_use_same_curly_braces(self):
         # Note: Literal sets using braces were introduced in python 3.
