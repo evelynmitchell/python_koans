@@ -19,7 +19,7 @@ class AboutTuples(Koan):
         # Note, assertRegex() uses regular expression pattern matching,
         # so you don't have to copy the whole message.
 
-        self.assertRegex(msg, 'TypeError')
+        self.assertRegex(msg, 'assignment')
 
     def test_tuples_are_immutable_so_appending_is_not_possible(self):
         count_of_three =  (1, 2, 5)
