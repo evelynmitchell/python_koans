@@ -37,11 +37,11 @@ class AboutNone(Koan):
         #
         #     https://github.com/gregmalcolm/python_koans/wiki/Class-Attribute
 
-        self.assertEqual("'NoneType' object has no attribute 'some_method_none'", ex2.__class__)
+        self.assertEqual("'NoneType' object has no attribute 'some_method_none_does_not_know_about'", ex2.__class__)
 
         # What message was attached to the exception?
         # (HINT: replace __ with part of the error message.)
-        self.assertRegex(ex2.args[0], __)
+        self.assertRegex(ex2.args[0], 'no attribute') ) 
 
     def test_none_is_distinct(self):
         """
