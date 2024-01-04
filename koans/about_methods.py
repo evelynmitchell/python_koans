@@ -33,7 +33,7 @@ class AboutMethods(Koan):
             msg = e.args[0]
 
         # Note, watch out for parenthesis. They need slashes in front!
-        self.assertRegex(msg, ___)
+        self.assertRegex(msg, 'AttributeError')
 
     # ------------------------------------------------------------------
 
