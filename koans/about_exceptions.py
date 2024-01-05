@@ -32,7 +32,7 @@ class AboutExceptions(Koan):
         self.assertTrue(issubclass(RuntimeError, Exception), \
             "RuntimeError is a subclass of Exception")
 
-        self.assertEqual(RuntimeError, ex2.args[0])
+        self.assertEqual("Oops", ex2.args[0])
 
     def test_raising_a_specific_error(self):
         result = None
