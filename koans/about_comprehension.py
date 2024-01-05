@@ -56,6 +56,6 @@ class AboutComprehension(Koan):
         dict_comprehension = { k.upper(): weapon for k, weapon in dict_of_weapons.items() if weapon}
 
         self.assertEqual(False, 'first' in dict_comprehension)
-        self.assertEqual('fear', 'FIRST' in dict_comprehension)
+        self.assertEqual(True, 'FIRST' in dict_comprehension)
         self.assertEqual(5, len(dict_of_weapons))
         self.assertEqual(4, len(dict_comprehension))
