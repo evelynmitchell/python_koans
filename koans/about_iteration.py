@@ -21,7 +21,7 @@ class AboutIteration(Koan):
         try:
             self.assertEqual('alpha', next(stages))
             next(stages)
-            self.assertEqual('beta', next(stages))
+            self.assertEqual('gamma', next(stages))
             next(stages)
         except StopIteration as ex:
             err_msg = 'Ran out of iterations'
