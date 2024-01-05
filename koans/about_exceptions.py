@@ -12,7 +12,7 @@ class AboutExceptions(Koan):
         mro = self.MySpecialError.mro()
         self.assertEqual('RuntimeError', mro[1].__name__)
         self.assertEqual('Exception', mro[2].__name__)
-        self.assertEqual(__, mro[3].__name__)
+        self.assertEqual('BaseException', mro[3].__name__)
         self.assertEqual(__, mro[4].__name__)
 
     def test_try_clause(self):
