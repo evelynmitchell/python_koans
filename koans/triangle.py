@@ -21,9 +21,20 @@ def triangle(a, b, c):
         return 'equilateral'
     elif a == b or b == c or a == c:
         return 'isosceles'
-    else:
+    elif a!=b and b!=c and a!=c:
+        if a <= 0 or b <= 0 or c <= 0:
+            raise TriangleError
+        elif (a + b < c) or (a + c < b) or (b + c <a):
+            raise TriangleError
+    else: a!=b and b!=c and a!=c:
         return 'scalene'
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
-    pass
+    """Exception raised for errors in the triangle data."""
+    try:
+        pass
+    except TriangleError:
+        print("Invalid triangle sides")
+
+
