@@ -42,7 +42,7 @@ class AboutExceptions(Koan):
             result = 'exception handled'
             msg = ex.args[0]
 
-        self.assertEqual(None, result)
+        self.assertEqual('exception handled', result)
         self.assertEqual("My Message", msg)
 
     def test_else_clause(self):
