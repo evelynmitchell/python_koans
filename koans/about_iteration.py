@@ -13,7 +13,7 @@ class AboutIteration(Koan):
         for num in it:
             total += num
 
-        self.assertEqual(__ , total)
+        self.assertEqual(15 , total)
 
     def test_iterating_with_next(self):
         stages = iter(['alpha','beta','gamma'])
