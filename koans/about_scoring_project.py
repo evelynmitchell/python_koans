@@ -33,9 +33,11 @@ from runner.koan import *
 # Your goal is to write the score method.
 
 def score(dice):
-    # You need to write this method
-    pass
+    score = 0
+    if len(dice)=0:
+        return 0
 
+    
 class AboutScoringProject(Koan):
     def test_score_of_an_empty_list_is_zero(self):
         self.assertEqual(0, score([]))
