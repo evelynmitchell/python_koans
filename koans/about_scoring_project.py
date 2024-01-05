@@ -38,7 +38,10 @@ def score(dice):
         return 0
     if dice.count(5) == 1:
         score += 50
+    if dice.count(1) == 1:
+        score += 100
         return score
+    
 
     
 class AboutScoringProject(Koan):
