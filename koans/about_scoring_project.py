@@ -36,10 +36,11 @@ def score(dice):
     score = 0
     if len(dice)==0:
         return 0
-    if dice.count(5) == 1:
-        score += 50
-    if dice.count(1) == 1:
-        score += 100
+    if len(dice)==1:
+        if dice.count(5) == 1:
+            score += 50
+        if dice.count(1) == 1:
+            score += 100
     if dice.count(1) == 3:
         score += 1000
     if dice.count(2) == 3:
@@ -50,6 +51,7 @@ def score(dice):
         score += 400
     if dice.count(5) == 3:
         score += 500
+    
 
     
 class AboutScoringProject(Koan):
