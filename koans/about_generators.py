@@ -45,7 +45,7 @@ class AboutGenerators(Koan):
         attempt2 = list(dynamite)
 
         self.assertEqual(['Boom!', 'Boom!','Boom!'], attempt1)
-        self.assertEqual(False, attempt2)
+        self.assertEqual([], attempt2)
 
     # ------------------------------------------------------------------
 
