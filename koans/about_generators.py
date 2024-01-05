@@ -30,7 +30,7 @@ class AboutGenerators(Koan):
         # A generator has to be iterated through.
         with self.assertRaises(TypeError): num = num_generator[0]
 
-        self.assertEqual([2], list(num_generator)[0])
+        self.assertEqual(2, list(num_generator)[0])
 
         # Both list comprehensions and generators can be iterated though. However, a generator
         # function is only called on the first iteration. The values are generated on the fly
