@@ -39,8 +39,10 @@ def score(dice):
     if len(dice)==1:
         if dice.count(5) == 1:
             score += 50
+            break
         if dice.count(1) == 1:
             score += 100
+            break
     if dice.count(1) == 3:
         score += 1000
     if dice.count(2) == 3:
