@@ -71,8 +71,8 @@ class AboutIteration(Koan):
         names = ["Jim", "Bill", "Clarence", "Doug", "Eli", "Elizabeth"]
         iterator = filter(is_big_name, names)
 
-        self.assertEqual(__, next(iterator))
-        self.assertEqual(__, next(iterator))
+        self.assertEqual('Clarence', next(iterator))
+        self.assertEqual('Elizabeth', next(iterator))
 
         try:
             next(iterator)
@@ -80,7 +80,7 @@ class AboutIteration(Koan):
         except StopIteration:
             msg = 'Ran out of big names'
 
-        self.assertEquals(__, msg)
+        self.assertEquals('Ran out of big names', msg)
 
     # ------------------------------------------------------------------
 
