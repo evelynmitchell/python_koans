@@ -25,7 +25,7 @@ class AboutGenerators(Koan):
         num_list = [x*2 for x in range(1,3)]
         num_generator = (x*2 for x in range(1,3))
 
-        self.assertEqual(2, num_list[0])
+        self.assertEqual([2], num_list[0])
 
         # A generator has to be iterated through.
         with self.assertRaises(TypeError): num = num_generator[0]
@@ -44,8 +44,8 @@ class AboutGenerators(Koan):
         attempt1 = list(dynamite)
         attempt2 = list(dynamite)
 
-        self.assertEqual(__, attempt1)
-        self.assertEqual(__, attempt2)
+        self.assertEqual('Boom!Boom!Boom', attempt1)
+        self.assertEqual(False, attempt2)
 
     # ------------------------------------------------------------------
 
