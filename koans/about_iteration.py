@@ -47,7 +47,7 @@ class AboutIteration(Koan):
         for item in mapping:
             mapped_seq.append(item)
 
-        self.assertEqual(iter, mapped_seq)
+        self.assertEqual(map, mapped_seq)
 
         # Note, iterator methods actually return objects of iter type in
         # python 3. In python 2 map() would give you a list.
