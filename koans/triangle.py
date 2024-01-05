@@ -26,8 +26,10 @@ def triangle(a, b, c):
             raise TriangleError
         elif (a + b < c) or (a + c < b) or (b + c <a):
             raise TriangleError
+        else:
+            return 'scalene'
     else: 
-        return 'scalene'
+        raise(TriangleError)
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
