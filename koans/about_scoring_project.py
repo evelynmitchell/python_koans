@@ -34,7 +34,7 @@ from runner.koan import *
 
 def score(dice):
     score = 0
-    if len(dice)=0:
+    if len(dice)==0:
         return 0
 
     
