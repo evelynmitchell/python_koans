@@ -129,5 +129,5 @@ class AboutIteration(Koan):
 
         file = open("example_file.txt")
         upcase_lines = map(make_upcase, file.readlines())
-        self.assertEqual("This Is A Test", list(upcase_lines))
+        self.assertEqual(["This","Is", "A", "Test"], list(upcase_lines))
         file.close()
