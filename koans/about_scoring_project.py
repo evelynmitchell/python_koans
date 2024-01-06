@@ -38,7 +38,8 @@ def score(dice):
         return 0
     if len(dice)==1:
         if dice.count(5) == 1:
-            score += 50
+            score = 50
+            return score
         if dice.count(1) == 1:
             score += 100
     else:
