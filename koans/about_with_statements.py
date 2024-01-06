@@ -99,8 +99,6 @@ class AboutWithStatements(Koan):
                         return None
         # Using the context manager self.FileContextManager, rewrite this
         # function to return the first line containing the letter 'e'.
-        else:
-            return None
 
     def test_finding_lines2(self):
         self.assertNotEqual(None, self.find_line2("example_file.txt"))
