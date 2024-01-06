@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from runner.koan import *_
+from runner.koan import *
 from random import randint(1,7)
 
 import random
