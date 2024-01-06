@@ -95,8 +95,8 @@ class AboutWithStatements(Koan):
                     match = re.search('e', line)
                     if match:
                         return line
-                    else:
-                        return None
+                    elif not match:
+                        return "No match found"
         # Using the context manager self.FileContextManager, rewrite this
         # function to return the first line containing the letter 'e'.
 
