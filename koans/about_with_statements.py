@@ -90,9 +90,17 @@ class AboutWithStatements(Koan):
     # ------------------------------------------------------------------
 
     def find_line2(self, file_name):
+        with self.FileContextManager(file_name) as file:
+            for line in file.readlines():
+                    match = re.search('e', line)
+                    if match:
+                        return line
+                    else:
+                        return None
         # Using the context manager self.FileContextManager, rewrite this
         # function to return the first line containing the letter 'e'.
-        return None
+        else:
+            return None
 
     def test_finding_lines2(self):
         self.assertNotEqual(None, self.find_line2("example_file.txt"))
