@@ -41,7 +41,7 @@ class AboutWithStatements(Koan):
             self.fail()
 
     def test_finding_lines(self):
-        self.assertEqual(4, self.find_line("example_file.txt"))
+        self.assertEqual('test', self.find_line("example_file.txt"))
 
     ## ------------------------------------------------------------------
     ## THINK ABOUT IT:
