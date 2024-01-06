@@ -41,7 +41,8 @@ def score(dice):
             score = 50
             return score
         if dice.count(1) == 1:
-            score += 100
+            score = 100
+            return score
     else:
         if dice.count(1) == 3:
             score += 1000
