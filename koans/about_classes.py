@@ -33,7 +33,7 @@ class AboutClasses(Koan):
     def test_private_attributes_are_not_really_private(self):
         dog = self.Dog2()
         dog.set_name("Fido")
-        self.assertEqual(__, dog._name)
+        self.assertEqual('Fido', dog._name)
         # The _ prefix in _name implies private ownership, but nothing is truly
         # private in Python.
 
@@ -41,11 +41,11 @@ class AboutClasses(Koan):
         fido = self.Dog2()
         fido.set_name("Fido")
 
-        self.assertEqual(__, getattr(fido, "_name"))
+        self.assertEqual("Fido"), getattr(fido, "_name"))
         # getattr(), setattr() and delattr() are a way of accessing attributes
         # by method rather than through assignment operators
 
-        self.assertEqual(__, fido.__dict__["_name"])
+        self.assertEqual("Fido", fido.__dict__["_name"])
         # Yes, this works here, but don't rely on the __dict__ object! Some
         # class implementations use optimization which result in __dict__ not
         # showing everything.
