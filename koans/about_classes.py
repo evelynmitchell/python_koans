@@ -162,7 +162,7 @@ class AboutClasses(Koan):
         seq = [1, 2, 3]
 
         self.assertEqual("[1, 2, 3]", str(seq))
-        self.assertEqual("[1 2 3]", repr(seq))
+        self.assertEqual("[1, 2, 3]", repr(seq))
 
         self.assertEqual("STRING", str("STRING"))
         self.assertEqual("STRING", repr("STRING"))
