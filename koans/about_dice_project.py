@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from runner.koan import *
+from runner.koan import *_
+from random import randint(1,7)
 
 import random
 
@@ -14,9 +15,12 @@ class DiceSet:
         return self._values
 
     def roll(self, n):
+        for i in range(n):
+            self._values.append(randint(1,7))
+        return self._values
         # Needs implementing!
         # Tip: random.randint(min, max) can be used to generate random numbers
-        pass
+        # See https://docs.python.org/3/library/random.html#random.randint
 
 class AboutDiceProject(Koan):
     def test_can_create_a_dice_set(self):
