@@ -8,7 +8,7 @@ import random
 
 class DiceSet:
     def __init__(self):
-        self._values = None
+        self._values = []
 
     @property
     def values(self):
