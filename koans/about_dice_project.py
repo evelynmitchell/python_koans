@@ -52,7 +52,7 @@ class AboutDiceProject(Koan):
             results.append(dice.values)
 
         self.assertTrue(any(result != results[0] for result in results[1:]), \
-            "Two rolls should be different from the first roll")
+            "A roll should be different from the first roll")
 
         # THINK ABOUT IT:
         #
