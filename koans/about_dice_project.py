@@ -15,6 +15,7 @@ class DiceSet:
         return self._values
 
     def roll(self, n):
+        self._values = []
         for i in range(n):
             self._values.append(randint(1,6))
         return self._values
