@@ -52,7 +52,7 @@ class AboutDiceProject(Koan):
             dice.roll(5)
             results.append(dice.values)
             
-        self.assertFalse(any(result != results[0] for result in results[1:]), \
+        self.assertTrue(any(result != results[0] for result in results[1:]), \
             "A roll should be different from the first roll")
 
 
