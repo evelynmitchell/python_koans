@@ -50,9 +50,10 @@ class AboutDiceProject(Koan):
         for _ in range(10):
             dice.roll(5)
             results.append(dice.values)
-
-        self.assertTrue(any(result != results[0] for result in results[1:]), \
+            
+        self.assertFalse(any(result == results[0] for result in results[1:]), \
             "A roll should be different from the first roll")
+
 
         # THINK ABOUT IT:
         #
