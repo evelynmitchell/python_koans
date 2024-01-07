@@ -122,7 +122,7 @@ class AboutMultipleInheritance(Koan):
         self.assertEqual('Spider', mro[2].__name__)
         self.assertEqual('Animal', mro[3].__name__)
         self.assertEqual('Nameable', mro[4].__name__)
-        self.assertEqual('Object', mro[5].__name__)
+        self.assertEqual('object', mro[5].__name__)
 
     def test_confirm_the_mro_controls_the_calling_order(self):
         jeff = self.Spiderpig()
