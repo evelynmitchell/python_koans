@@ -16,7 +16,7 @@ class DiceSet:
 
     def roll(self, n):
         for i in range(n):
-            self._values.append(randint(1,7))
+            self._values.append(randint(1,6))
         return self._values
         # Needs implementing!
         # Tip: random.randint(min, max) can be used to generate random numbers
