@@ -120,7 +120,7 @@ class AboutMultipleInheritance(Koan):
         self.assertEqual('Spiderpig', mro[0].__name__)
         self.assertEqual('Pig', mro[1].__name__)
         self.assertEqual('Animal', mro[2].__name__)
-        self.assertEqual('AboutMultipleInheritance, mro[3].__name__)
+        self.assertEqual('AboutMultipleInheritance', mro[3].__name__)
         self.assertEqual('Koan', mro[4].__name__)
         self.assertEqual('Object', mro[5].__name__)
 
