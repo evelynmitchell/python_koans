@@ -26,7 +26,7 @@ class AboutScope(Koan):
         self.assertEqual('jims dog', fido.identify())
         self.assertEqual('joes dog', rover.identify())
 
-        self.assertEqual(True, type(fido) == type(rover))
+        self.assertEqual(False, type(fido) == type(rover))
         self.assertEqual(False, jims.Dog == joes.Dog)
 
     # ------------------------------------------------------------------
