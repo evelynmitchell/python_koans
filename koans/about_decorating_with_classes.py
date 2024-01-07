@@ -123,6 +123,6 @@ class AboutDecoratingWithClasses(Koan):
         return "D'oh"
 
     def test_we_can_chain_decorators(self):
-        self.assertEqual("D'oh, D'oh D'oh, D'oh", self.homer())
+        self.assertEqual("D'oh, D'oh, D'oh, D'oh", self.homer())
         self.assertEqual('DOH!', self.homer.__doc__)
 
