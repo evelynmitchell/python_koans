@@ -45,15 +45,14 @@ class AboutDiceProject(Koan):
 
     def test_dice_values_should_change_between_rolls(self):
         dice = DiceSet()
+        results = []
 
-        dice.roll(5)
-        first_time = dice.values
+        for _ in range(10):
+            dice.roll(5)
+            results.append(dice.values)
 
-        dice.roll(5)
-        second_time = dice.values
-
-        self.assertNotEqual(first_time, second_time, \
-            "Two rolls should not be equal")
+        self.assertTrue(any(result != results[0] for result in results[1:]), \
+            "Two rolls should be different from the first roll")
 
         # THINK ABOUT IT:
         #
