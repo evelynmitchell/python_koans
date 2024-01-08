@@ -114,7 +114,7 @@ class AboutAttributeAccess(Koan):
         catcher = self.RecursiveCatcher()
         catcher.my_method()
         global stack_depth
-        self.assertEqual(10, stack_depth)
+        self.assertEqual(11, stack_depth)
 
     # ------------------------------------------------------------------
 
@@ -135,7 +135,7 @@ class AboutAttributeAccess(Koan):
         catcher = self.MinimalCatcher()
         catcher.my_method()
 
-        self.assertEqual(__, catcher.no_of_getattr_calls)
+        self.assertEqual(2, catcher.no_of_getattr_calls)
 
     def test_getattr_only_catches_unknown_attributes(self):
         catcher = self.MinimalCatcher()
