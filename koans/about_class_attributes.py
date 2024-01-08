@@ -30,19 +30,19 @@ class AboutClassAttributes(Koan):
 
     def test_creating_objects_without_defining_a_class(self):
         singularity = object()
-        self.assertEqual(__, len(dir(singularity)))
+        self.assertEqual(26, len(dir(singularity)))
 
     def test_defining_attributes_on_individual_objects(self):
         fido = self.Dog()
         fido.legs = 4
 
-        self.assertEqual(__, fido.legs)
+        self.assertEqual(4, fido.legs)
 
     def test_defining_functions_on_individual_objects(self):
         fido = self.Dog()
         fido.wag = lambda : 'fidos wag'
 
-        self.assertEqual(__, fido.wag())
+        self.assertEqual('fidos wag', fido.wag())
 
     def test_other_objects_are_not_affected_by_these_singleton_functions(self):
         fido = self.Dog()
@@ -52,7 +52,7 @@ class AboutClassAttributes(Koan):
             return 'fidos wag'
         fido.wag = wag
 
-        with self.assertRaises(___): rover.wag()
+        with self.assertRaises(AttributeError): rover.wag()
 
     # ------------------------------------------------------------------
 
