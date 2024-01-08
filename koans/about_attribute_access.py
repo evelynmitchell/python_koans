@@ -145,7 +145,7 @@ class AboutAttributeAccess(Koan):
         self.assertEqual('DuffObject',
             type(catcher.give_me_duff_or_give_me_death()).__name__)
 
-        self.assertEqual(1, catcher.no_of_getattr_calls)
+        self.assertEqual(3, catcher.no_of_getattr_calls)
 
     # ------------------------------------------------------------------
 
