@@ -48,8 +48,8 @@ class AboutDeletingObjects(Koan):
         except AttributeError as e:
             err_msg2 = e.args[0]
 
-        self.assertRegex(err_msg1, __)
-        self.assertRegex(err_msg2, __)
+        self.assertRegex(err_msg1, 'UnboundLocalError')
+        self.assertRegex(err_msg2, 'UnboundLocalError')
 
     # ====================================================================
 
