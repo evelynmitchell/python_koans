@@ -79,7 +79,7 @@ class AboutClassAttributes(Koan):
 
     def test_classmethods_are_not_independent_of_instance_methods(self):
         fido = self.Dog2()
-        self.assertRegex(fido.growl(), "instance growl")
+        self.assertRegex(fido.growl(), "classmethod growl, arg: cls=Dog2")
         self.assertRegex(self.Dog2.growl(), "classmethod growl, arg: cls=Dog2")
 
     def test_staticmethods_are_unbound_functions_housed_in_a_class(self):
