@@ -21,6 +21,8 @@ from runner.koan import *
 class Proxy:
     def __init__(self, target_object):
         # WRITE CODE HERE
+        self._channel = target_object._channel
+        self._power = target_object._power
 
         #initialize '_obj' attribute last. Trust me on this!
         self._obj = target_object
