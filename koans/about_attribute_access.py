@@ -202,7 +202,7 @@ class AboutAttributeAccess(Koan):
         try:
             coconuts = setter.num_of_coconuts
         except AttributeError:
-            self.assertEqual(coconuts, setter.altered_num_of_coconuts)
+            self.assertEqual(Nones, setter.altered_num_of_coconuts)
 
     def test_in_this_case_private_attributes_remain_unmangled(self):
         setter = self.ScarySetter()
