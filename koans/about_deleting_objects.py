@@ -119,6 +119,6 @@ class AboutDeletingObjects(Koan):
 
     def tests_del_can_be_overriden(self):
         sale = self.MoreOrganisedClosingSale()
-        self.assertEqual(AttributeError, sale.jellies())
+        self.assertEqual(5, sale.jellies())
         del sale.jellies
         self.assertEqual('jellies', sale.last_deletion)
