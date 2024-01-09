@@ -21,30 +21,13 @@ from runner.koan import *
 class Proxy:
     def __init__(self, target_object):
         # WRITE CODE HERE
-        self._channel = target_object._channel
-        self._power = target_object._power
+
 
         #initialize '_obj' attribute last. Trust me on this!
         self._obj = target_object
 
     # WRITE CODE HERE
-    def __getattr__(self, attr_name):
-        if attr_name == 'power':
-            return self._obj.power()
-        elif attr_name == 'channel':
-            return self._obj.channel
-        elif attr_name == 'is_on':
-            self._obj.is_on()
-        else:
-            self._messages.append(attr_name)
-            return getattr(self._obj, attr_name)
 
-    def __setattr__(self, attr_name, value):
-        if attr_name == '_obj':
-            self.__dict__[attr_name] = value
-        else:
-            self._messages.append(attr_name)
-            setattr(self._obj, attr_name, value)
 
 # The proxy object should pass the following Koan:
 #
