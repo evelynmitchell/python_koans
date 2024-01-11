@@ -32,7 +32,7 @@ class Proxy:
             if attr_name == 'no_such_method':
                 raise AttributeError
         except AttributeError:
-            return __getattribute__(self, attr_name)
+            return self.__getattr__(attr_name)
 
     def messages(self):
         return self._messages
