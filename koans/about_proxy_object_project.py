@@ -33,7 +33,7 @@ class Proxy:
     #    except AttributeError:
     #        return "Making the attribute: " + attr_name
 
-    def messages(self)):
+    def messages(self):
         self._messages.append("messages")
         return self._messages
 
