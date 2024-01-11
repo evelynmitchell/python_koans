@@ -68,7 +68,7 @@ class AboutProxyObjectProject(Koan):
 
         tv.power()
         tv.channel = 10
-
+        print(tv.messages())
         self.assertEqual(['power', 'channel'], tv.messages())
 
     def test_proxy_handles_invalid_messages(self):
