@@ -35,6 +35,9 @@ class Proxy:
 
     def messages(self):
         return self._messages
+    
+    def was_called(self, attr_name):
+        return attr_name in self._messages
 
     def __getattr__(self, attr_name):
         try:
@@ -68,7 +71,7 @@ class AboutProxyObjectProject(Koan):
 
         tv.power()
         tv.channel = 10
-        print(tv.messages())
+        
         self.assertEqual(['power', 'channel'], tv.messages())
 
     def test_proxy_handles_invalid_messages(self):
