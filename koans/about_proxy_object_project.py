@@ -34,11 +34,11 @@ class Proxy:
     #        return "Making the attribute: " + attr_name
 
     def messages(self):
-        self._messages.append("messages")
         return self._messages
 
     def __getattr__(self, attr_name):
         try:
+            self._messages.append(attr_name)
             return getattr(self._obj, attr_name)
         except AttributeError:
             # make the missing attribute
