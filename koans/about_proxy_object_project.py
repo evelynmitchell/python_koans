@@ -29,7 +29,8 @@ class Proxy:
     # WRITE CODE HERE
     def __getattribute__(self, attr_name):
         try:
-            return self._obj.__setattr__(self, attr_name)
+            if attr_name == 'no_such_method':
+                raise AttributeError
         except AttributeError:
             return attr_name
 
