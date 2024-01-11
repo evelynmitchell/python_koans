@@ -52,12 +52,14 @@ class Proxy:
 #
 class AboutProxyObjectProject(Koan):
     def test_proxy_method_returns_wrapped_object(self):
+        # works
         # NOTE: The Television class is defined below
         tv = Proxy(Television())
 
         self.assertTrue(isinstance(tv, Proxy))
 
     def test_tv_methods_still_perform_their_function(self):
+        #works
         tv = Proxy(Television())
 
         tv.channel = 10
@@ -82,6 +84,7 @@ class AboutProxyObjectProject(Koan):
 
 
     def test_proxy_reports_methods_have_been_called(self):
+        #works
         tv = Proxy(Television())
 
         tv.power()
@@ -102,6 +105,7 @@ class AboutProxyObjectProject(Koan):
         self.assertEqual(0, tv.number_of_times_called('is_on'))
 
     def test_proxy_can_record_more_than_just_tv_objects(self):
+        #works
         proxy = Proxy("Py Ohio 2010")
 
         result = proxy.upper()
