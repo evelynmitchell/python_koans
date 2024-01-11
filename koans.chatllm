@@ -1,0 +1,23 @@
+{
+  "cells": [
+    {
+      "kind": 1,
+      "value": "Can you tell me about how a generic proxy works? One which wraps another python service, but does not alter either input or outputs?\n",
+      "languageId": "markdown",
+      "outputs": []
+    },
+    {
+      "kind": 2,
+      "value": "I would like to write a proxy which wraps a service (not requests). It will pass these tests:\n```\n",
+      "languageId": "chatllm",
+      "outputs": [],
+      "model": "GPT-4-Turbo"
+    },
+    {
+      "kind": 1,
+      "value": "",
+      "languageId": "markdown",
+      "outputs": []
+    }
+  ]
+}
