@@ -31,7 +31,7 @@ class Proxy:
         try:
             return self._obj.__setattr__(self, attr_name)
         except AttributeError:
-            raise AttributeError(attr_name)
+            return attr_name
 
     def messages(self):
         return self._messages
