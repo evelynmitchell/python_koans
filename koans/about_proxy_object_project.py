@@ -27,7 +27,15 @@ class Proxy:
         self._obj = target_object
 
     # WRITE CODE HERE
-    def __getattribute__(self, attr_name):
+    def __getattribute__(self, name):
+        # The __getattribute__ method is called whenever the attribute of an object is accessed.
+        try:
+            self._messages.append(attr_name)
+            return getattr(self._obj, attr_name)
+        except AttributeError:
+            # make the missing attribute
+            return self.__getattribute__(attr_name)
+        
         try:
             if attr_name == 'no_such_method':
                 raise AttributeError
@@ -43,13 +51,13 @@ class Proxy:
     def number_of_times_called(self, attr_name):
         return self._messages.count(attr_name)
 
-    def __getattr__(self, attr_name):
+    def getattr(self, attr_name):
+        # The __getattr__ method is called whenever the attribute of an object is accessed and it is not found in the usual places.
         try:
             self._messages.append(attr_name)
-            return getattr(self._obj, attr_name)
+            return __getattr__(self._obj, attr_name)
         except AttributeError:
-            # make the missing attribute
-            return self.__getattribute__(attr_name)
+            return "Couldn't find attribute named " + attr_name
 
 
 # The proxy object should pass the following Koan:
