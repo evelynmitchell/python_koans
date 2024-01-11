@@ -27,11 +27,11 @@ class Proxy:
         self._obj = target_object
 
     # WRITE CODE HERE
-    #def __getattribute__(self, attr_name):
-    #    try:
-    #        return self._obj.__setattr__(self, attr_name)
-    #    except AttributeError:
-    #        return "Making the attribute: " + attr_name
+    def __getattribute__(self, attr_name):
+        try:
+            return self._obj.__setattr__(self, attr_name)
+        except AttributeError:
+            raise AttributeError(attr_name)
 
     def messages(self):
         return self._messages
