@@ -31,7 +31,7 @@ class Proxy:
         # The __getattribute__ method is called whenever the attribute of an object is accessed.
         try:
             self._messages.append(attr_name)
-            return self.attr_name
+            return self.attr_name()
         except AttributeError:
             # make the missing attribute
             return getattr(attr_name)
