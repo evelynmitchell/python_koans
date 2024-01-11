@@ -21,12 +21,24 @@ from runner.koan import *
 class Proxy:
     def __init__(self, target_object):
         # WRITE CODE HERE
-
+    
 
         #initialize '_obj' attribute last. Trust me on this!
         self._obj = target_object
 
     # WRITE CODE HERE
+    def __getattribute__(self, attr_name):
+        try:
+            return self._obj.__setattr__(self, attr_name)
+        except AttributeError:
+            return "Making the attribute: " + attr_name
+
+    def __getattr__(self, attr_name):
+        try:
+            return getattr(self._obj, attr_name)
+        except AttributeError:
+            # make the missing attribute
+            return __getattribute__(self, attr_name)
 
 
 # The proxy object should pass the following Koan:
