@@ -49,7 +49,7 @@ class Proxy:
             return getattr(self._obj, attr_name)
         except AttributeError:
             # make the missing attribute
-            return __getattribute__(self, attr_name)
+            return self.__getattribute__(attr_name)
 
 
 # The proxy object should pass the following Koan:
