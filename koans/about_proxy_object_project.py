@@ -39,6 +39,9 @@ class Proxy:
     def was_called(self, attr_name):
         return attr_name in self._messages
 
+    def number_of_times_called(self, attr_name):
+        return self._messages.count(attr_name)
+
     def __getattr__(self, attr_name):
         try:
             self._messages.append(attr_name)
