@@ -27,8 +27,9 @@ class Proxy:
         self._obj = target_object
 
     # WRITE CODE HERE
-   # def __getattribute__(self, name):
-    #    # The __getattribute__ method is called whenever the attribute of an object is accessed.
+    # def __getattribute__(self, name):
+    #    # The __getattribute__ method is called whenever the attribute of
+         # an object is accessed.
     #    try:
     #        self._messages.append(attr_name)
     #        return self.attr_name()
@@ -51,13 +52,14 @@ class Proxy:
     def number_of_times_called(self, attr_name):
         return self._messages.count(attr_name)
 
-    def getattr(self, attr_name):
-        # The __getattr__ method is called whenever the attribute of an object is accessed and it is not found in the usual places.
+    def __getattr__(self, attr_name):
+        # The __getattr__ method is called whenever the attribute of 
+        # an object is accessed and it is not found in the usual places.
         try:
             if attr_name == 'no_such_method':
                 raise AttributeError
             self._messages.append(attr_name)
-            return __getattr__(self._obj, attr_name)
+            return getattr(self._obj, attr_name)
         except AttributeError:
             return "Couldn't find attribute named " + attr_name
 
@@ -73,7 +75,7 @@ class AboutProxyObjectProject(Koan):
         self.assertTrue(isinstance(tv, Proxy))
 
     def test_tv_methods_still_perform_their_function(self):
-        #works
+        # #works
         tv = Proxy(Television())
 
         tv.channel = 10
