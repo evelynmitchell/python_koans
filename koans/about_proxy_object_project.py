@@ -36,7 +36,7 @@ class Proxy:
         #print('dict: ', self.__dict__)
         try:
             # self._messages.append(attr_name)
-            return getattr(object, attr_name)
+            return getattr(object, name)
         except AttributeError:
     #        return target_object.__getattribute__(self, name)
             #return self._obj.__getattribute__(self, name)
