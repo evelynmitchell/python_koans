@@ -57,7 +57,6 @@ class Proxy:
     def __getattr__(self, attr_name):
         # The __getattr__ method is called whenever the attribute of 
         # an object is accessed and it is not found in the usual places.
-        print(inspect.getmro(self.__class__))
         try:
             if attr_name == 'no_such_method':
                 raise AttributeError
