@@ -37,7 +37,7 @@ class Proxy:
             # make the missing attribute
             return getattr(self._obj.attr_name)
         # not sure if this is right, self._obj or _obj?
-        self.__getattribute__(self, name)
+        self.__mro__[1].__getattribute__(self, name)
 
     def messages(self):
         return self._messages
