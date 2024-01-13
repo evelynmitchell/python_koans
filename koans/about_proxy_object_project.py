@@ -22,8 +22,6 @@ import inspect
 class Proxy:
     def __init__(self, target_object):
         # WRITE CODE HERE
-        self._name = target_object.__class__.__name__
-        print('name: ', self._name)
         self._messages = [] 
 
         #initialize '_obj' attribute last. Trust me on this!
@@ -40,7 +38,7 @@ class Proxy:
             # self._messages.append(attr_name)
             return getattr(self._obj, attr_name)
         except AttributeError:
-            return object.__getattribute__(self, name)
+            return target_object.__getattribute__(self, name)
             #return self._obj.__getattribute__(self, name)
             # make the missing attribute
             return # getattr(self._obj.attr_name)
