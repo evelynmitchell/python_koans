@@ -30,6 +30,7 @@ class Proxy:
     def __getattribute__(self, name):
         # The __getattribute__ method is called whenever the attribute of
         # an object is accessed.
+        print(inspect.getmro(self.__class__))
         try:
             self._messages.append(attr_name)
             return getattr(self._obj, attr_name)
