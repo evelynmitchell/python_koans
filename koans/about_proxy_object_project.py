@@ -17,6 +17,7 @@
 # can do it!
 
 from runner.koan import *
+import inspect
 
 class Proxy:
     def __init__(self, target_object):
