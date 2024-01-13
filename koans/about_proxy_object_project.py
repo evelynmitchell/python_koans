@@ -22,10 +22,10 @@ import inspect
 class Proxy:
     def __init__(self, target_object):
         # WRITE CODE HERE
-        self._messages = [] 
+        object.__setattr__(self,'_messages', [])
 
         #initialize '_obj' attribute last. Trust me on this!
-        self._obj = target_object
+        object.__setattr__(self,'_obj',target_object)
 
     # WRITE CODE HERE
     def __getattribute__(self, name):
