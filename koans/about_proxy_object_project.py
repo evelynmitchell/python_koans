@@ -36,6 +36,8 @@ class Proxy:
         except AttributeError:
             # make the missing attribute
             return getattr(self._obj.attr_name)
+        # not sure if this is right, self._obj or _obj?
+        self._obj.__getattribute__(self, name)
 
     def messages(self):
         return self._messages
