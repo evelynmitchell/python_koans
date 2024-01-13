@@ -23,8 +23,6 @@ class Proxy:
     def __init__(self, target_object):
         # WRITE CODE HERE
         self._messages = [] 
-        print('class: ', self.__class__)
-        print('dict: ', self.__dict__)
 
         #initialize '_obj' attribute last. Trust me on this!
         self._obj = target_object
@@ -34,8 +32,8 @@ class Proxy:
         # The __getattribute__ method is called whenever the attribute of
         # an object is accessed.
         
-        print('class: ', self.__class__)
-        print('dict: ', self.__dict__)
+        #print('class: ', self.__class__)
+        #print('dict: ', self.__dict__)
         try:
             self._messages.append(attr_name)
             return getattr(self._obj, attr_name)
