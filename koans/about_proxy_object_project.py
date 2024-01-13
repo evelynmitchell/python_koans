@@ -41,7 +41,7 @@ class Proxy:
     #        return target_object.__getattribute__(self, name)
             #return self._obj.__getattribute__(self, name)
             # make the missing attribute
-            return # getattr(self._obj.attr_name)
+            #return  getattr(self._obj.attr_name)
         # not sure if this is right, self._obj or _obj?
         #self.__bases__.__getattribute__(self, name)
 
