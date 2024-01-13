@@ -28,22 +28,22 @@ class Proxy:
         object.__setattr__(self,'_obj',target_object)
 
     # WRITE CODE HERE
-    #def __getattribute__(self, name):
+    def __getattribute__(self, name):
         # The __getattribute__ method is called whenever the attribute of
         # an object is accessed.
         
         #print('class: ', self.__class__)
         #print('dict: ', self.__dict__)
-    #    try:
+        try:
             # self._messages.append(attr_name)
-    #        return getattr(self._obj, attr_name)
-    #    except AttributeError:
+            return getattr(object, attr_name)
+        except AttributeError:
     #        return target_object.__getattribute__(self, name)
             #return self._obj.__getattribute__(self, name)
             # make the missing attribute
             #return  getattr(self._obj.attr_name)
         # not sure if this is right, self._obj or _obj?
-        #self.__bases__.__getattribute__(self, name)
+            return object.__getattribute__(self, name)
 
     def messages(self):
         return self._messages
