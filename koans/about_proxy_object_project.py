@@ -23,6 +23,8 @@ class Proxy:
     def __init__(self, target_object):
         # WRITE CODE HERE
         self._messages = [] 
+        print('class: ', self.__class__)
+        print('dict: ', self.__dict__)
 
         #initialize '_obj' attribute last. Trust me on this!
         self._obj = target_object
