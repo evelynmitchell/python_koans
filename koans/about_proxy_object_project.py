@@ -24,7 +24,9 @@ class Proxy:
         object.__setattr__(self,'_messages', [])
         object.__setattr__(self,'_obj',target_object)
     
-    def __getattribute__(self, name):
+i    def __getattribute__(self, name):
+        if name in ['_messages', '_obj', 'messages', 'was_called', 'number_of_times_called']:
+            return object.__getattribute__(self, name)
         try:
             x = object.__getattribute__(self, '_obj')
             object.__getattribute__(self, '_messages').append(name)
@@ -32,7 +34,7 @@ class Proxy:
             return attr
         except AttributeError:
             return object.__getattribute__(self, name)      
-    
+   
     def messages(self):
         return self._messages
     
