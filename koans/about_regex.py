@@ -20,7 +20,7 @@ class AboutRegex(Koan):
         """
         string = "Hello, my name is Felix and these koans are based " + \
         "on Ben's book: Regular Expressions in 10 minutes."
-        m = re.search(__, string)
+        m = re.search("Felix", string)
         self.assertTrue(
             m and m.group(0) and
                 m.group(0) == 'Felix',
