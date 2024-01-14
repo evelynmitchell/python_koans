@@ -24,7 +24,7 @@ class Proxy:
         object.__setattr__(self,'_messages', [])
         object.__setattr__(self,'_obj',target_object)
     
-i    def __getattribute__(self, name):
+i   def __getattribute__(self, name):
         if name in ['_messages', '_obj', 'messages', 'was_called', 'number_of_times_called']:
             return object.__getattribute__(self, name)
         try:
