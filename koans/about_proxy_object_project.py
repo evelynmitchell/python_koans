@@ -31,18 +31,9 @@ class Proxy:
     def __getattribute__(self, name):
         # The __getattribute__ method is called whenever the attribute of
         # an object is accessed.
-        
-        #print('class: ', self.__class__)
-        #print('dict: ', self.__dict__)
         try:
-            # self._messages.append(attr_name)
             return getattr(object, name)
         except AttributeError:
-    #        return target_object.__getattribute__(self, name)
-            #return self._obj.__getattribute__(self, name)
-            # make the missing attribute
-            #return  getattr(self._obj.attr_name)
-        # not sure if this is right, self._obj or _obj?
             return object.__getattribute__(self, name)
 
     def messages(self):
@@ -61,7 +52,8 @@ class Proxy:
             if attr_name == 'no_such_method':
                 raise AttributeError
             self._messages.append(attr_name)
-            return getattr(self._obj, attr_name)
+            return object.__getattribute__(self, name)
+            #return getattr(self._obj, attr_name)
         except AttributeError:
             return "Couldn't find attribute named " + attr_name
 
