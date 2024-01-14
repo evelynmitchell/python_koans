@@ -52,8 +52,8 @@ class Proxy:
             if attr_name == 'no_such_method':
                 raise AttributeError
             self._messages.append(attr_name)
-            return object.__getattribute__(self, name)
-            #return getattr(self._obj, attr_name)
+            # return object.__getattribute__(self, name) #nope
+            return getattr(self._obj, attr_name)
         except AttributeError:
             return "Couldn't find attribute named " + attr_name
 
