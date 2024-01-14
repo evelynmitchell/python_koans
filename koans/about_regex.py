@@ -81,7 +81,7 @@ class AboutRegex(Koan):
                 + "sa1.xls"
 
         # I want to find all uses of myArray
-        change_this_search_string = 'a..xlx'
+        change_this_search_string = '.a..xlx'
         self.assertEquals(
             len(re.findall(change_this_search_string, string)),
             3)
