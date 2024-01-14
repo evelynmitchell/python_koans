@@ -134,7 +134,7 @@ class AboutRegex(Koan):
                 + "ca1.xls"
 
         # I want to find the name 'sam'
-        change_this_search_string = '[^nc]am'
+        change_this_search_string = 'sam.xls'
         self.assertEquals(
             re.findall(change_this_search_string, string),
             ['sam.xls'])
