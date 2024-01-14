@@ -29,7 +29,6 @@ class Proxy:
             return object.__getattribute__(self, name)
         try:
             x = object.__getattribute__(self, '_obj')
-            object.__getattribute__(self, '_messages').append(name)
             attr = getattr(x, name)
             return attr
         except AttributeError:
