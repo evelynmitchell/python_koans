@@ -40,6 +40,10 @@ class Proxy:
         except AttributeError:
             return object.__getattribute__(self, name)      
    
+    def __setattr__(self, name, value):
+        self._messages.append(name)
+        return object.__getattribute__(self, '_obj').__setattr__(name, value)
+
     def messages(self):
         return self._messages
     
@@ -48,7 +52,7 @@ class Proxy:
 
     def number_of_times_called(self, attr_name):
         return self._messages.count(attr_name)
-               
+        
 # The proxy object should pass the following Koan:
 #
 class AboutProxyObjectProject(Koan):
