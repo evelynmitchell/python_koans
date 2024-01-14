@@ -53,8 +53,8 @@ class Proxy:
                 return result
             return newfunc
         else:
-            return attr  
- """
+            return attr  """
+            
     def __getattr__(self, attr_name):
         if attr_name in ['_messages', '_obj', 'messages', 'was_called', 'number_of_times_called']:
             return object.__getattribute__(self, attr_name)
