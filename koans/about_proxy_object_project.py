@@ -48,7 +48,7 @@ class Proxy:
 
     def number_of_times_called(self, attr_name):
         return self._messages.count(attr_name)
-        
+               
 # The proxy object should pass the following Koan:
 #
 class AboutProxyObjectProject(Koan):
