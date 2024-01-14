@@ -19,7 +19,7 @@
 from runner.koan import *
 import inspect
 
-iclass Proxy:
+class Proxy:
     def __init__(self, target_object):
         object.__setattr__(self,'_messages', [])
         object.__setattr__(self,'_obj',target_object)
@@ -48,7 +48,7 @@ iclass Proxy:
 
     def number_of_times_called(self, attr_name):
         return self._messages.count(attr_name)
-        
+
 
 # The proxy object should pass the following Koan:
 #
