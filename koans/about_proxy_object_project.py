@@ -27,14 +27,13 @@ class Proxy:
         #initialize '_obj' attribute last. Trust me on this!
         object.__setattr__(self,'_obj',target_object)
 
-    # WRITE CODE HERE
+
     def __getattribute__(self, name):
-        # The __getattribute__ method is called whenever the attribute of
-        # an object is accessed.
         try:
-            return getattr(object, name)
+            return object.__getattribute__(self, '_obj').__getattribute__(name)
         except AttributeError:
-            return object.__getattribute__(self, name)
+            return object.__getattribute__(self, name)      
+    
 
     def messages(self):
         return self._messages
@@ -46,16 +45,8 @@ class Proxy:
         return self._messages.count(attr_name)
 
     def __getattr__(self, attr_name):
-        # The __getattr__ method is called whenever the attribute of 
-        # an object is accessed and it is not found in the usual places.
-        try:
-            if attr_name == 'no_such_method':
-                raise AttributeError
-            self._messages.append(attr_name)
-            # return object.__getattribute__(self, name) #nope
-            return getattr(self._obj, attr_name)
-        except AttributeError:
-            return "Couldn't find attribute named " + attr_name
+        self._messages.append(attr_name)
+        return getattr(self._obj, attr_name)        
 
 
 # The proxy object should pass the following Koan:
