@@ -48,7 +48,7 @@ class Proxy:
         if callable(attr):
             def newfunc(*args, **kwargs):
                 result = attr(*args, **kwargs)
-            r   eturn result
+                return result
             return newfunc
         else:
             return attr  
