@@ -30,8 +30,8 @@ class Proxy:
         try:
             attr = object.__getattribute__(self, '_obj').__getattribute__(name)
             if callable(attr):
-                self._messages.append(name)
                 def newfunc(*args, **kwargs):
+                    self._messages.append(name)
                     result = attr(*args, **kwargs)
                     return result
                 return newfunc
@@ -48,8 +48,7 @@ class Proxy:
 
     def number_of_times_called(self, attr_name):
         return self._messages.count(attr_name)
-
-
+        
 # The proxy object should pass the following Koan:
 #
 class AboutProxyObjectProject(Koan):
