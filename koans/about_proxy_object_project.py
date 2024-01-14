@@ -44,7 +44,7 @@ class Proxy:
     def number_of_times_called(self, attr_name):
         return self._messages.count(attr_name)
 
-    def __getattr__(self, attr_name):
+"""     def __getattr__(self, attr_name):
         self._messages.append(attr_name)
         attr = getattr(self._obj, attr_name)
         if callable(attr):
@@ -54,7 +54,12 @@ class Proxy:
             return newfunc
         else:
             return attr  
-
+ """
+    def __getattr__(self, attr_name):
+        if attr_name in ['_messages', '_obj', 'messages', 'was_called', 'number_of_times_called']:
+            return object.__getattribute__(self, attr_name)
+        self._messages.append(attr_name)
+        return getattr(self._obj, attr_name)
 
 # The proxy object should pass the following Koan:
 #
