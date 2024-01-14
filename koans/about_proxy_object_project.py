@@ -23,12 +23,11 @@ class Proxy:
     def __init__(self, target_object):
         object.__setattr__(self,'_messages', [])
         object.__setattr__(self,'_obj',target_object)
-
-
+    
     def __getattribute__(self, name):
         try:
             x = object.__getattribute__(self, '_obj')
-            self._messages.append(name)
+            object.__getattribute__(self, '_messages').append(name)
             return getattr(x, name)
         except AttributeError:
             return object.__getattribute__(self, name)      
