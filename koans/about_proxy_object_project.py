@@ -21,20 +21,18 @@ import inspect
 
 class Proxy:
     def __init__(self, target_object):
-        # WRITE CODE HERE
         object.__setattr__(self,'_messages', [])
-
-        #initialize '_obj' attribute last. Trust me on this!
         object.__setattr__(self,'_obj',target_object)
 
 
     def __getattribute__(self, name):
         try:
-            return object.__getattribute__(self, '_obj').__getattribute__(name)
+            x = object.__getattribute__(self, '_obj')
+            self._messages.append(name)
+            return getattr(x, name)
         except AttributeError:
             return object.__getattribute__(self, name)      
     
-
     def messages(self):
         return self._messages
     
@@ -46,7 +44,14 @@ class Proxy:
 
     def __getattr__(self, attr_name):
         self._messages.append(attr_name)
-        return getattr(self._obj, attr_name)        
+        attr = getattr(self._obj, attr_name)
+        if callable(attr):
+            def newfunc(*args, **kwargs):
+                result = attr(*args, **kwargs)
+            r   eturn result
+            return newfunc
+        else:
+            return attr  
 
 
 # The proxy object should pass the following Koan:
