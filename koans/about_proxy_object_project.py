@@ -48,7 +48,14 @@ class Proxy:
         if attr_name in ['_messages', '_obj', 'messages', 'was_called', 'number_of_times_called']:
             return object.__getattribute__(self, attr_name)
         self._messages.append(attr_name)
-        return getattr(self._obj, attr_name)
+        attr = getattr(self._obj, attr_name)
+        if callable(attr):
+            def newfunc(*args, **kwargs):
+                result = attr(*args, **kwargs)
+                return result
+            return newfunc
+        else:
+            return attr
 
 # The proxy object should pass the following Koan:
 #
