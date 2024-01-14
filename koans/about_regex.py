@@ -64,7 +64,7 @@ class AboutRegex(Koan):
             "is based on Ben's book: Regular Expressions in 10 minutes."
 
         self.assertEqual(re.findall("felix", string), ['felix'])
-        self.assertEqual(re.findall("felix", string, re.IGNORECASE), ['felix'])
+        self.assertEqual(re.findall("felix", string, re.IGNORECASE), ['Felix','felix'])
 
     def test_matching_any_character(self):
         """
