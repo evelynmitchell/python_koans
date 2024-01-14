@@ -63,8 +63,8 @@ class AboutRegex(Koan):
         string = "Hello, my name is Felix or felix and this koan " + \
             "is based on Ben's book: Regular Expressions in 10 minutes."
 
-        self.assertEqual(re.findall("felix", string), __)
-        self.assertEqual(re.findall("felix", string, re.IGNORECASE), __)
+        self.assertEqual(re.findall("felix", string), False)
+        self.assertEqual(re.findall("felix", string, re.IGNORECASE), True)
 
     def test_matching_any_character(self):
         """
