@@ -19,7 +19,7 @@
 from runner.koan import *
 import inspect
 
-class Proxy:
+iclass Proxy:
     def __init__(self, target_object):
         object.__setattr__(self,'_messages', [])
         object.__setattr__(self,'_obj',target_object)
@@ -28,9 +28,15 @@ class Proxy:
         if name in ['_messages', '_obj', 'messages', 'was_called', 'number_of_times_called']:
             return object.__getattribute__(self, name)
         try:
-            x = object.__getattribute__(self, '_obj')
-            attr = getattr(x, name)
-            return attr
+            attr = object.__getattribute__(self, '_obj').__getattribute__(name)
+            if callable(attr):
+                self._messages.append(name)
+                def newfunc(*args, **kwargs):
+                    result = attr(*args, **kwargs)
+                    return result
+                return newfunc
+            else:
+                return attr
         except AttributeError:
             return object.__getattribute__(self, name)      
    
@@ -42,20 +48,8 @@ class Proxy:
 
     def number_of_times_called(self, attr_name):
         return self._messages.count(attr_name)
+        
 
-    def __getattr__(self, attr_name):
-        if attr_name in ['_messages', '_obj', 'messages', 'was_called', 'number_of_times_called']:
-            return object.__getattribute__(self, attr_name)
-        attr = getattr(self._obj, attr_name)
-        if callable(attr):
-            self._messages.append(attr_name)
-            def newfunc(*args, **kwargs):
-                result = attr(*args, **kwargs)
-                return result
-            return newfunc
-        else:
-            return attr
-            
 # The proxy object should pass the following Koan:
 #
 class AboutProxyObjectProject(Koan):
