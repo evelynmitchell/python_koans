@@ -38,11 +38,10 @@
       "outputs": []
     },
     {
-      "kind": 2,
+      "kind": 1,
       "value": "",
-      "languageId": "chatllm",
-      "outputs": [],
-      "model": "GPT-4-Turbo"
+      "languageId": "markdown",
+      "outputs": []
     }
   ]
 }
